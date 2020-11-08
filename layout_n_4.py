@@ -7,7 +7,7 @@ import dash_core_components as dcc
 
 from styles_file import styles
 
-page_3_layout = html.Div(children=[
+page_4_layout = html.Div(children=[
 
     # HEADER
     html.Div(
