@@ -3,6 +3,7 @@ import dash_html_components as html
 
 from analyser import arr_by_row, count, names_of_product
 from styles_file import styles
+from left_bar import left_side
 
 page_2_layout = html.Div(children=[
 
@@ -15,16 +16,8 @@ page_2_layout = html.Div(children=[
     ),
 
     # LEFT-BAR
-    html.Div(
-        children=[
-            dcc.Link('Страница первая', href='/', style=styles['links_to_page']),
-            html.Br(),
-            dcc.Link('Страница вторая', href='/page-2', style=styles['links_to_page']),
-            html.Br(),
-            dcc.Link('Страница третья', href='/page-3', style=styles['links_to_page'])
-        ],
-        style=styles['LEFT-BAR']
-    ),
+    left_side,
+
 
     # MAIN-BLOCK
     html.Div(

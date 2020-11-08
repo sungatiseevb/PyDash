@@ -82,3 +82,28 @@ styles['graph_product'] = {
     'left' : '150px',
     'top' : '50px'
 }
+
+styles['gauge1'] = {
+    'width' : '100px',
+    'height' : '100px',
+    'position' : 'absolute',
+    'left' : '200px',
+}
+
+styles['gauge2'] = {
+    'width' : '100px',
+    'height' : '100px',
+    'position' : 'absolute',
+    'left' : '450px'
+}
+
+styles['random_graph'] = {
+    'position' : 'absolute',
+    'left' : '700px',
+    'bottom' : '250px',
+}
+
+styles['table_top_10'] = {
+    'position' : 'absolute',
+    'top' : '200px'
+}

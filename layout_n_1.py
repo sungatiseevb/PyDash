@@ -1,7 +1,9 @@
 import dash_html_components as html
+
+from left_bar import left_side
 from styles_file import styles
 from drawers import draw_pie
-from analyser import data, arr_by_row, count, names_of_product
+from analyser import data
 import dash_core_components as dcc
 
 data_for_pie_1 = data['Портфель'].value_counts()
@@ -21,16 +23,7 @@ page_1_layout = html.Div(children=[
     ),
 
     # LEFT-BAR
-    html.Div(
-        children=[
-            dcc.Link('Страница первая', href='/', style=styles['links_to_page']),
-            html.Br(),
-            dcc.Link('Страница вторая', href='/page-2', style=styles['links_to_page']),
-            html.Br(),
-            dcc.Link('Страница третья', href='/page-3', style=styles['links_to_page'])
-        ],
-        style=styles['LEFT-BAR']
-    ),
+    left_side,
 
     # MAIN-BLOCK
     html.Div(
