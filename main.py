@@ -442,7 +442,7 @@ app.layout = html.Div([
     html.Div(id='page-content')
 ])
 
-
+server = app.server
 # Update the index
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
@@ -472,5 +472,5 @@ def update_time_srez(val):
         ]}
 
 if __name__ == '__main__':
-    app.run_server(debug = True)
+    app.run_server(debug = False)
 
