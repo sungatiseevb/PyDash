@@ -73,5 +73,5 @@ def update_g(n_intervals):
     return pressure_1, pressure_2, fig
 
 if __name__ == '__main__':
-    app.run_server(debug = True)
+    app.run_server(debug = False)
 
