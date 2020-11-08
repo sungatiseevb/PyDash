@@ -11,7 +11,6 @@ import plotly.express as px
 import dash_table
 
 reader = pd.read_excel("Витрина.xlsx")
-
 data = pd.DataFrame(reader.values[2:, 1:])
 data.columns = reader.values[0][1:]
 
