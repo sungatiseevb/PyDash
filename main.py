@@ -473,5 +473,5 @@ def update_time_srez(val):
         ]}
 
 if __name__ == '__main__':
-    app.run_server(port = 4049)
+    app.run_server(debug = True)
 
