@@ -1,10 +1,8 @@
+import dash_core_components as dcc
 import dash_daq as daq
 import dash_html_components as html
-import dash_table
-from analyser import top_10_debtors
-from left_bar import left_side
-import dash_core_components as dcc
 
+from left_bar import left_side
 from styles_file import styles
 
 page_3_layout = html.Div(children=[
@@ -58,13 +56,13 @@ page_3_layout = html.Div(children=[
                         dcc.Graph(id="my-graph", figure={}, style = styles['random_graph']),
                         className="row",
                     ),
-                    html.Div([
-                        dash_table.DataTable(
-                            id='table',
-                            columns=[{"name": i, "id": i} for i in top_10_debtors.columns],
-                            data=top_10_debtors.to_dict('records')
-                        )
-                    ], style = styles['table_top_10']),
+                    # html.Div([
+                    #     dash_table.DataTable(
+                    #         id='table',
+                    #         columns=[{"name": i, "id": i} for i in top_10_debtors.columns],
+                    #         data=top_10_debtors.to_dict('records')
+                    #     )
+                    # ], style = styles['table_top_10']),
                     dcc.Interval(id="timing", interval=1000, n_intervals=0)
                 ])
         ],
