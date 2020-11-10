@@ -8,6 +8,9 @@ from analyser import count, names_of_product
 from layout_n_1 import page_1_layout
 from layout_n_2 import page_2_layout
 from layout_n_3 import page_3_layout
+from layout_n_4 import page_4_layout
+from layout_n_5 import page_5_layout
+from layout_n_6 import page_6_layout
 import plotly.graph_objects as go
 
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
@@ -17,23 +20,18 @@ app.layout = html.Div([
     html.Div(id='page-content')
 ])
 
+pages = {'/' : page_1_layout, '/page-2' : page_2_layout, '/page-3' : page_3_layout, '/page-4' : page_4_layout,
+         '/page-5' : page_5_layout, '/page-6' : page_6_layout, '/page-7' : page_6_layout, '/page-8' : page_6_layout, '/page-9' : page_6_layout}
+
 server = app.server
 # Update the index
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
-    if pathname == '/':
-        return page_1_layout
-    elif pathname == '/page-2':
-        return page_2_layout
-    elif pathname == '/page-3':
-        return page_3_layout
-    elif pathname == '/page-4':
-        return 505
-    else:
+    try:
+        return pages[pathname]
+    except KeyError:
         return 404
-    # You could also return a 404 "URL not found" page here
-
 
 @app.callback(
     Output('products_d', 'figure'),
@@ -70,6 +68,7 @@ def update_g(n_intervals):
     fig.update_layout(yaxis={"range": [0, 10]})
 
     return pressure_1, pressure_2, fig
+
 
 if __name__ == '__main__':
     app.run_server(debug = True)

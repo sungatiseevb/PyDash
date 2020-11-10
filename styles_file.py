@@ -25,7 +25,7 @@ styles['MAIN-BLOCK'] = {
     'width' : '78%',
     'height' : '80vh',
     'position' : 'absolute',
-    'left' : '10%'
+    'left' : '11%'
 }
 
 styles['FOOTER'] = {

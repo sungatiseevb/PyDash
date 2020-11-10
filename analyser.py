@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 
 reader = pd.read_excel("Витрина.xlsx")
-data = pd.DataFrame(reader.values[2:, 1:])
-data.columns = reader.values[0][1:]
+data = pd.DataFrame(reader.values[2:, 1:-1])
+data.columns = reader.values[0][1:-1]
 
 data.loc[
         (data['Тип клиента'] == 'ЮЛ')
@@ -182,4 +182,4 @@ for i in range(len(arr_by_row)):
                      ])
 
 top_10_debtors = data.sort_values(by=['Сумма основного долга'], ascending=False)[:10]
-top_10_debtors = top_10_debtors.loc[:, ('Наименование клиента-дебитора', 'Сумма основного долга')]
+top_10_debtors = top_10_debtors.loc[:, ('Наименование клиента-дебитора', 'Сумма основного долга', 'Продукт', 'Период просрочки')]
